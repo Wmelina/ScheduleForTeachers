@@ -17,7 +17,6 @@
 		842858F51F7C423E00A1CB23 /* ScheduleForTeachersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842858F41F7C423E00A1CB23 /* ScheduleForTeachersUITests.swift */; };
 		843531551F9FD190004A82C8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843531541F9FD190004A82C8 /* RegistrationViewController.swift */; };
 		843531571F9FD2DB004A82C8 /* TeacherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */; };
-		8435315B1F9FDD5A004A82C8 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435315A1F9FDD5A004A82C8 /* TeacherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		842858F61F7C423E00A1CB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843531541F9FD190004A82C8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewController.swift; sourceTree = "<group>"; };
-		8435315A1F9FDD5A004A82C8 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +107,6 @@
 				842858D31F7C423E00A1CB23 /* ViewController.swift */,
 				843531541F9FD190004A82C8 /* RegistrationViewController.swift */,
 				843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */,
-				8435315A1F9FDD5A004A82C8 /* TeacherTableViewCell.swift */,
 				842858D51F7C423E00A1CB23 /* Main.storyboard */,
 			);
 			path = ScheduleForTeachers;
@@ -283,7 +280,6 @@
 				842858D41F7C423E00A1CB23 /* ViewController.swift in Sources */,
 				842858D21F7C423E00A1CB23 /* AppDelegate.swift in Sources */,
 				843531551F9FD190004A82C8 /* RegistrationViewController.swift in Sources */,
-				8435315B1F9FDD5A004A82C8 /* TeacherTableViewCell.swift in Sources */,
 				842858DA1F7C423E00A1CB23 /* ScheduleForTeachers.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -30,7 +30,30 @@ class ViewController: UIViewController {
         
         return true
     }
+    
 
+    @IBAction func signIn(_ sender: UIButton) {
+        if (loginTextField.text?.characters.count)! < 1 {
+            myAlert(titleText: "Error", messageText: "Login must contain at least one character")
+        }
+        if (passwordTextField.text?.characters.count)! < 8 {
+            myAlert(titleText: "Error", messageText: "Password must contain at least 8 characters")
+        }
+        //here will be profile check
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else {
+            return true
+        }
+        let newLength = text.utf16.count + string.utf16.count - range.length
+        return newLength <= 30
+    }
+    
+    func myAlert(titleText : String, messageText : String) {
+        let alert = UIAlertController(title: titleText, message: messageText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
 
