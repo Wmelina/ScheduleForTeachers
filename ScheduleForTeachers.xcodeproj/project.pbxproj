@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84152BF21FA621D3003A10D2 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84152BF11FA621D3003A10D2 /* ScheduleTableViewController.swift */; };
+		84152BF71FA6241D003A10D2 /* LessonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84152BF51FA6241D003A10D2 /* LessonTableViewCell.swift */; };
+		84152BF81FA6241D003A10D2 /* LessonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84152BF61FA6241D003A10D2 /* LessonTableViewCell.xib */; };
 		842858D21F7C423E00A1CB23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842858D11F7C423E00A1CB23 /* AppDelegate.swift */; };
 		842858D41F7C423E00A1CB23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842858D31F7C423E00A1CB23 /* ViewController.swift */; };
 		842858D71F7C423E00A1CB23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842858D51F7C423E00A1CB23 /* Main.storyboard */; };
@@ -17,6 +20,10 @@
 		842858F51F7C423E00A1CB23 /* ScheduleForTeachersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842858F41F7C423E00A1CB23 /* ScheduleForTeachersUITests.swift */; };
 		843531551F9FD190004A82C8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843531541F9FD190004A82C8 /* RegistrationViewController.swift */; };
 		843531571F9FD2DB004A82C8 /* TeacherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */; };
+		844C78C11FBCE51F00CD46A6 /* пары_преподавателя.json in Resources */ = {isa = PBXBuildFile; fileRef = 844C78BF1FBCE51F00CD46A6 /* пары_преподавателя.json */; };
+		844C78C21FBCE51F00CD46A6 /* вход.json in Resources */ = {isa = PBXBuildFile; fileRef = 844C78C01FBCE51F00CD46A6 /* вход.json */; };
+		844C78C61FBF49B300CD46A6 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C78C51FBF49B300CD46A6 /* SegueViewController.swift */; };
+		844C78C81FBF4C9500CD46A6 /* WorkWithJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C78C71FBF4C9500CD46A6 /* WorkWithJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84152BF11FA621D3003A10D2 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		84152BF51FA6241D003A10D2 /* LessonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonTableViewCell.swift; sourceTree = "<group>"; };
+		84152BF61FA6241D003A10D2 /* LessonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LessonTableViewCell.xib; sourceTree = "<group>"; };
 		842858CE1F7C423E00A1CB23 /* ScheduleForTeachers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleForTeachers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842858D11F7C423E00A1CB23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		842858D31F7C423E00A1CB23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +63,10 @@
 		842858F61F7C423E00A1CB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843531541F9FD190004A82C8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewController.swift; sourceTree = "<group>"; };
+		844C78BF1FBCE51F00CD46A6 /* пары_преподавателя.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "пары_преподавателя.json"; path = "../../пары_преподавателя.json"; sourceTree = "<group>"; };
+		844C78C01FBCE51F00CD46A6 /* вход.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "вход.json"; path = "../../вход.json"; sourceTree = "<group>"; };
+		844C78C51FBF49B300CD46A6 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
+		844C78C71FBF4C9500CD46A6 /* WorkWithJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkWithJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +119,14 @@
 			children = (
 				843531511F9F7A5C004A82C8 /* assist */,
 				842858D31F7C423E00A1CB23 /* ViewController.swift */,
+				84152BF51FA6241D003A10D2 /* LessonTableViewCell.swift */,
 				843531541F9FD190004A82C8 /* RegistrationViewController.swift */,
 				843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */,
+				84152BF11FA621D3003A10D2 /* ScheduleTableViewController.swift */,
+				84152BF61FA6241D003A10D2 /* LessonTableViewCell.xib */,
 				842858D51F7C423E00A1CB23 /* Main.storyboard */,
+				844C78C71FBF4C9500CD46A6 /* WorkWithJSON.swift */,
+				844C78C51FBF49B300CD46A6 /* SegueViewController.swift */,
 			);
 			path = ScheduleForTeachers;
 			sourceTree = "<group>";
@@ -133,6 +152,8 @@
 		843531511F9F7A5C004A82C8 /* assist */ = {
 			isa = PBXGroup;
 			children = (
+				844C78BF1FBCE51F00CD46A6 /* пары_преподавателя.json */,
+				844C78C01FBCE51F00CD46A6 /* вход.json */,
 				842858D11F7C423E00A1CB23 /* AppDelegate.swift */,
 				842858DB1F7C423E00A1CB23 /* Assets.xcassets */,
 				842858DD1F7C423E00A1CB23 /* LaunchScreen.storyboard */,
@@ -251,7 +272,10 @@
 			files = (
 				842858DF1F7C423E00A1CB23 /* LaunchScreen.storyboard in Resources */,
 				842858DC1F7C423E00A1CB23 /* Assets.xcassets in Resources */,
+				844C78C21FBCE51F00CD46A6 /* вход.json in Resources */,
 				842858D71F7C423E00A1CB23 /* Main.storyboard in Resources */,
+				844C78C11FBCE51F00CD46A6 /* пары_преподавателя.json in Resources */,
+				84152BF81FA6241D003A10D2 /* LessonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +300,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84152BF21FA621D3003A10D2 /* ScheduleTableViewController.swift in Sources */,
 				843531571F9FD2DB004A82C8 /* TeacherTableViewController.swift in Sources */,
 				842858D41F7C423E00A1CB23 /* ViewController.swift in Sources */,
 				842858D21F7C423E00A1CB23 /* AppDelegate.swift in Sources */,
+				844C78C81FBF4C9500CD46A6 /* WorkWithJSON.swift in Sources */,
+				844C78C61FBF49B300CD46A6 /* SegueViewController.swift in Sources */,
 				843531551F9FD190004A82C8 /* RegistrationViewController.swift in Sources */,
+				84152BF71FA6241D003A10D2 /* LessonTableViewCell.swift in Sources */,
 				842858DA1F7C423E00A1CB23 /* ScheduleForTeachers.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

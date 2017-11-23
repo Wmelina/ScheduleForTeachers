@@ -1,20 +1,20 @@
 //
-//  TeacherTableViewController.swift
+//  ScheduleTableViewController.swift
 //  ScheduleForTeachers
 //
-//  Created by Admin on 24.10.17.
+//  Created by Admin on 29.10.17.
 //  Copyright © 2017 NewbieBand. All rights reserved.
 //
 
 import UIKit
+var timeLabel = ["08:00 - 09:30", "09:40 - 11:10", "11:20 - 12:50", "13:00 - 14:30", "14:40 - 16:10", "16:20 - 17:50", "18:00 - 19:30"]
 
-var segueInt:Int = 0
-
-class TeacherTableViewController: UITableViewController {
+class ScheduleTableViewController: UITableViewController {
 
     
-    var array = ["Волик", "Марков", "Ковтун"]
+    var dayOfTheWeek = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
     
+    var scheduleArray = [[[0:"KPO", 1:"TPO",3:"EPO"],[1:"KPO",2:"EPO", 3:"ZALUPA"],[0:"KPO",1:"TPO",3:"EPO"],[1:"TPO",2:"HER",3:"EPO"],[0:"KPO",1:"TPO",2:"EPO"],[1:"KPO",2:"TPO",3:"EPO"]], [], []]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,38 +31,34 @@ class TeacherTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return dayOfTheWeek[section]
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 6
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return array.count
+        return 7
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 94
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
+        if segueInt == 0 {
+            cell.textLabel?.text = scheduleArray[0][indexPath.section][indexPath.row]
+        } 
         // Configure the cell...
-        cell.textLabel?.text = array[indexPath.row]
-        
+
         return cell
     }
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowSchedule" {
-            
-        }
-    }
- */
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        segueInt = indexPath.row
-        performSegue(withIdentifier: "TeacherSegue", sender: self)
-    }
  
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
