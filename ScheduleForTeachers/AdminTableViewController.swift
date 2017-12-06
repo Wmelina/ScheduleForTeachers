@@ -7,89 +7,72 @@
 //
 
 import UIKit
+import SwiftyJSON
+
+var namesIn:Array<String> = []
+var loginsIn:Array<String> = []
+var identifiersIn:Array<Int> = []
+var statusesIn:Array<String> = []
+var commentsIn:Array<String> = []
+var didSelectedRowForChoose = 0
 
 class AdminTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        getRequests()
+        
+    }
+    
+    func getRequests() {
+        let url = "https://65621f20.ngrok.io/accounts/unconfirmed/?q={\"Токен\":\"\(token)\"}"
+        let urlStr = url.addingPercentEscapes(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))! as NSString
+        let jsonUrl = NSURL(string:urlStr as String)
+        let jsonData = try? NSData(contentsOf: jsonUrl! as URL, options: NSData.ReadingOptions.uncached)
+        let parsedJson = JSON(data: jsonData! as Data)
+        
+        print(parsedJson)
+        
+        let requests = parsedJson["Заявки"].array!
+        for i in 0..<requests.count {
+            namesIn.append(parsedJson["Заявки"][i]["Имя"].string!)
+            loginsIn.append(parsedJson["Заявки"][i]["Логин"].string!)
+            identifiersIn.append(parsedJson["Заявки"][i]["Идентификатор"].int!)
+            statusesIn.append(parsedJson["Заявки"][i]["Статус"].string!)
+            commentsIn.append(parsedJson["Заявки"][i]["Заявка"].string!)
+            
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 218
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return namesIn.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
+            let rowNumber : Int = indexPath.row
 
-        // Configure the cell...
-
+            cell.nameInRequest.text = namesIn[rowNumber]
+            cell.loginInRequest.text = loginsIn[rowNumber]
+            let idntInt : Int  = identifiersIn[rowNumber]
+            let idntStr = String(idntInt)
+            cell.indetifierInRequest.text = idntStr
+            cell.statusInRequest.text = statusesIn[rowNumber]
+            cell.commentInRequest.text = commentsIn[rowNumber]
+        
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectedRowForChoose = indexPath.row
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
+

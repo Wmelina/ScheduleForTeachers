@@ -14,7 +14,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var fullName: UITextField!
     
-    @IBOutlet weak var status: UITextField!
+
+    @IBOutlet var status: UISegmentedControl!
     
     @IBOutlet weak var password: UITextField!
     
@@ -24,12 +25,23 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var comment: UITextField!
 
+    var statusStr : String = "Админ"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+    @IBAction func segChange(_ sender: Any) {
+        switch status.selectedSegmentIndex {
+        case 0:
+            statusStr = "Админ"
+        case 1:
+            statusStr = "Пользователь"
+        default:
+            break
+        }
+    }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
@@ -57,10 +69,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             myAlert(titleText: "Error", messageText: "Login must contain at least one character")
             errorTrig = false
         }
-        if (status.text?.characters.count)! < 1 {
-            myAlert(titleText: "Error", messageText: "Status must contain at least one character")
-            errorTrig = false
-        }
+
         if (password.text?.characters.count)! < 8 {
             myAlert(titleText: "Error", messageText: "Password must contain at least 8 characters")
             errorTrig = false
@@ -80,7 +89,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
         if errorTrig {
 
-        let parameters = ["Логин":fullName.text!, "Пароль":password.text!, "Заявка":comment.text!,"Имя":fullName.text!, "Статус":status.text!]
+        let parameters = ["Логин":fullName.text!, "Пароль":password.text!, "Заявка":comment.text!,"Имя":fullName.text!, "Статус":statusStr]
         
         guard let url = URL(string: "https://65621f20.ngrok.io/accounts/unconfirmed/new/") else { return }
         var request = URLRequest(url: url)
@@ -108,7 +117,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             myAlert(titleText: "Success", messageText: "Request successfully sended")
             
             self.fullName.text = ""
-            self.status.text = ""
+            statusStr = "Админ"
             self.comment.text = ""
             self.confPassword.text = ""
             self.password.text = ""

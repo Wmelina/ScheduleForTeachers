@@ -36,6 +36,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         dayOfTheWeekz.removeAll()
         nameOfPairz.removeAll()
         arrayOfTeachers.removeAll()
+        namesIn.removeAll()
+        loginsIn.removeAll()
+        identifiersIn.removeAll()
+        statusesIn.removeAll()
+        commentsIn.removeAll()
     }
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {

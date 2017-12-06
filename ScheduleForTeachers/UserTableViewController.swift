@@ -37,7 +37,8 @@ class UserTableViewController: UITableViewController {
         let parsedJson = JSON(data: jsonData! as Data)
         print(parsedJson)
         print(parsedJson.count)
-        for i in 0..<4 {
+        let lessonzz = parsedJson["Пары"].array!
+        for i in 0..<lessonzz.count {
             arrayOfGroups.append(parsedJson["Пары"][i]["Группы"][0].string!)
             numberOfLesson.append(parsedJson["Пары"][i]["Номер"].int!)
             auditory.append(parsedJson["Пары"][i]["Аудитория"].string!)

@@ -39,10 +39,10 @@ class ScheduleTableViewController: UITableViewController {
         let jsonData = try? NSData(contentsOf: jsonUrl! as URL, options: NSData.ReadingOptions.uncached)
         let parsedJson = JSON(data: jsonData! as Data)
         print(parsedJson)
-        let asd = parsedJson["Пары"].array!
-        print(asd)
-        print(asd.count)
-        for i in 0..<asd.count {
+        let lessonzz = parsedJson["Пары"].array!
+        print(lessonzz)
+        print(lessonzz.count)
+        for i in 0..<lessonzz.count {
             arrayOfGroups.append(parsedJson["Пары"][i]["Группы"][0].string!)
             numberOfLesson.append(parsedJson["Пары"][i]["Номер"].int!)
             auditory.append(parsedJson["Пары"][i]["Аудитория"].string!)
