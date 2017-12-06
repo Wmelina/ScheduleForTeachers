@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C8A714AB501D6502203F51D /* Pods_ScheduleForTeachers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71273F13FAF405F5569915E3 /* Pods_ScheduleForTeachers.framework */; };
 		84152BF21FA621D3003A10D2 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84152BF11FA621D3003A10D2 /* ScheduleTableViewController.swift */; };
 		84152BF71FA6241D003A10D2 /* LessonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84152BF51FA6241D003A10D2 /* LessonTableViewCell.swift */; };
 		84152BF81FA6241D003A10D2 /* LessonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84152BF61FA6241D003A10D2 /* LessonTableViewCell.xib */; };
@@ -20,10 +21,10 @@
 		842858F51F7C423E00A1CB23 /* ScheduleForTeachersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842858F41F7C423E00A1CB23 /* ScheduleForTeachersUITests.swift */; };
 		843531551F9FD190004A82C8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843531541F9FD190004A82C8 /* RegistrationViewController.swift */; };
 		843531571F9FD2DB004A82C8 /* TeacherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */; };
-		844C78C11FBCE51F00CD46A6 /* пары_преподавателя.json in Resources */ = {isa = PBXBuildFile; fileRef = 844C78BF1FBCE51F00CD46A6 /* пары_преподавателя.json */; };
-		844C78C21FBCE51F00CD46A6 /* вход.json in Resources */ = {isa = PBXBuildFile; fileRef = 844C78C01FBCE51F00CD46A6 /* вход.json */; };
-		844C78C61FBF49B300CD46A6 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C78C51FBF49B300CD46A6 /* SegueViewController.swift */; };
-		844C78C81FBF4C9500CD46A6 /* WorkWithJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C78C71FBF4C9500CD46A6 /* WorkWithJSON.swift */; };
+		844459751FD5F41A00C532E0 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844459741FD5F41900C532E0 /* UserTableViewController.swift */; };
+		844459781FD84E8900C532E0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844459761FD84E8900C532E0 /* TableViewCell.swift */; };
+		844459791FD84E8900C532E0 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844459771FD84E8900C532E0 /* TableViewCell.xib */; };
+		8444597B1FD8544300C532E0 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444597A1FD8544300C532E0 /* AdminTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4AB90CD22679D02CDF035A74 /* Pods-ScheduleForTeachers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleForTeachers.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleForTeachers/Pods-ScheduleForTeachers.release.xcconfig"; sourceTree = "<group>"; };
+		71273F13FAF405F5569915E3 /* Pods_ScheduleForTeachers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleForTeachers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84152BF11FA621D3003A10D2 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		84152BF51FA6241D003A10D2 /* LessonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonTableViewCell.swift; sourceTree = "<group>"; };
 		84152BF61FA6241D003A10D2 /* LessonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LessonTableViewCell.xib; sourceTree = "<group>"; };
@@ -63,10 +66,11 @@
 		842858F61F7C423E00A1CB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843531541F9FD190004A82C8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewController.swift; sourceTree = "<group>"; };
-		844C78BF1FBCE51F00CD46A6 /* пары_преподавателя.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "пары_преподавателя.json"; path = "../../пары_преподавателя.json"; sourceTree = "<group>"; };
-		844C78C01FBCE51F00CD46A6 /* вход.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "вход.json"; path = "../../вход.json"; sourceTree = "<group>"; };
-		844C78C51FBF49B300CD46A6 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
-		844C78C71FBF4C9500CD46A6 /* WorkWithJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkWithJSON.swift; sourceTree = "<group>"; };
+		844459741FD5F41900C532E0 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		844459761FD84E8900C532E0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		844459771FD84E8900C532E0 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		8444597A1FD8544300C532E0 /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
+		A300258638AB07C0CB85674C /* Pods-ScheduleForTeachers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleForTeachers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleForTeachers/Pods-ScheduleForTeachers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C8A714AB501D6502203F51D /* Pods_ScheduleForTeachers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D7E7C334362D15DD6D0CABE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A300258638AB07C0CB85674C /* Pods-ScheduleForTeachers.debug.xcconfig */,
+				4AB90CD22679D02CDF035A74 /* Pods-ScheduleForTeachers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		842858C51F7C423E00A1CB23 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +115,8 @@
 				842858E81F7C423E00A1CB23 /* ScheduleForTeachersTests */,
 				842858F31F7C423E00A1CB23 /* ScheduleForTeachersUITests */,
 				842858CF1F7C423E00A1CB23 /* Products */,
+				4D7E7C334362D15DD6D0CABE /* Pods */,
+				B20AB6D0E97B8F97827AE433 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,15 +134,18 @@
 			isa = PBXGroup;
 			children = (
 				843531511F9F7A5C004A82C8 /* assist */,
+				842858D51F7C423E00A1CB23 /* Main.storyboard */,
 				842858D31F7C423E00A1CB23 /* ViewController.swift */,
 				84152BF51FA6241D003A10D2 /* LessonTableViewCell.swift */,
-				843531541F9FD190004A82C8 /* RegistrationViewController.swift */,
 				843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */,
 				84152BF11FA621D3003A10D2 /* ScheduleTableViewController.swift */,
+				843531541F9FD190004A82C8 /* RegistrationViewController.swift */,
+				844459741FD5F41900C532E0 /* UserTableViewController.swift */,
+				8444597A1FD8544300C532E0 /* AdminTableViewController.swift */,
+				844459761FD84E8900C532E0 /* TableViewCell.swift */,
+				844459771FD84E8900C532E0 /* TableViewCell.xib */,
 				84152BF61FA6241D003A10D2 /* LessonTableViewCell.xib */,
-				842858D51F7C423E00A1CB23 /* Main.storyboard */,
-				844C78C71FBF4C9500CD46A6 /* WorkWithJSON.swift */,
-				844C78C51FBF49B300CD46A6 /* SegueViewController.swift */,
+				842858E01F7C423E00A1CB23 /* Info.plist */,
 			);
 			path = ScheduleForTeachers;
 			sourceTree = "<group>";
@@ -152,15 +171,20 @@
 		843531511F9F7A5C004A82C8 /* assist */ = {
 			isa = PBXGroup;
 			children = (
-				844C78BF1FBCE51F00CD46A6 /* пары_преподавателя.json */,
-				844C78C01FBCE51F00CD46A6 /* вход.json */,
 				842858D11F7C423E00A1CB23 /* AppDelegate.swift */,
 				842858DB1F7C423E00A1CB23 /* Assets.xcassets */,
 				842858DD1F7C423E00A1CB23 /* LaunchScreen.storyboard */,
-				842858E01F7C423E00A1CB23 /* Info.plist */,
 				842858D81F7C423E00A1CB23 /* ScheduleForTeachers.xcdatamodeld */,
 			);
 			name = assist;
+			sourceTree = "<group>";
+		};
+		B20AB6D0E97B8F97827AE433 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71273F13FAF405F5569915E3 /* Pods_ScheduleForTeachers.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842858F91F7C423E00A1CB23 /* Build configuration list for PBXNativeTarget "ScheduleForTeachers" */;
 			buildPhases = (
+				45368D1FACEE11490CDF1516 /* [CP] Check Pods Manifest.lock */,
 				842858CA1F7C423E00A1CB23 /* Sources */,
 				842858CB1F7C423E00A1CB23 /* Frameworks */,
 				842858CC1F7C423E00A1CB23 /* Resources */,
+				93D01A3FB65B3C4764FBDED4 /* [CP] Embed Pods Frameworks */,
+				4119712486B2636D2A0E303F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,10 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				842858DF1F7C423E00A1CB23 /* LaunchScreen.storyboard in Resources */,
+				844459791FD84E8900C532E0 /* TableViewCell.xib in Resources */,
 				842858DC1F7C423E00A1CB23 /* Assets.xcassets in Resources */,
-				844C78C21FBCE51F00CD46A6 /* вход.json in Resources */,
 				842858D71F7C423E00A1CB23 /* Main.storyboard in Resources */,
-				844C78C11FBCE51F00CD46A6 /* пары_преподавателя.json in Resources */,
 				84152BF81FA6241D003A10D2 /* LessonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,17 +321,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4119712486B2636D2A0E303F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScheduleForTeachers/Pods-ScheduleForTeachers-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45368D1FACEE11490CDF1516 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScheduleForTeachers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93D01A3FB65B3C4764FBDED4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ScheduleForTeachers/Pods-ScheduleForTeachers-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScheduleForTeachers/Pods-ScheduleForTeachers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		842858CA1F7C423E00A1CB23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				84152BF21FA621D3003A10D2 /* ScheduleTableViewController.swift in Sources */,
+				844459751FD5F41A00C532E0 /* UserTableViewController.swift in Sources */,
 				843531571F9FD2DB004A82C8 /* TeacherTableViewController.swift in Sources */,
 				842858D41F7C423E00A1CB23 /* ViewController.swift in Sources */,
 				842858D21F7C423E00A1CB23 /* AppDelegate.swift in Sources */,
-				844C78C81FBF4C9500CD46A6 /* WorkWithJSON.swift in Sources */,
-				844C78C61FBF49B300CD46A6 /* SegueViewController.swift in Sources */,
+				8444597B1FD8544300C532E0 /* AdminTableViewController.swift in Sources */,
+				844459781FD84E8900C532E0 /* TableViewCell.swift in Sources */,
 				843531551F9FD190004A82C8 /* RegistrationViewController.swift in Sources */,
 				84152BF71FA6241D003A10D2 /* LessonTableViewCell.swift in Sources */,
 				842858DA1F7C423E00A1CB23 /* ScheduleForTeachers.xcdatamodeld in Sources */,
@@ -458,6 +541,7 @@
 		};
 		842858FA1F7C423E00A1CB23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A300258638AB07C0CB85674C /* Pods-ScheduleForTeachers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScheduleForTeachers/Info.plist;
@@ -470,6 +554,7 @@
 		};
 		842858FB1F7C423E00A1CB23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AB90CD22679D02CDF035A74 /* Pods-ScheduleForTeachers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScheduleForTeachers/Info.plist;

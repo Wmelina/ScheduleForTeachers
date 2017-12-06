@@ -14,5 +14,5 @@ class LessonTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var roomLabel: UILabel!
     @IBOutlet var groupsNameLabel: UILabel!
-    
+    @IBOutlet var typeOfLesson: UILabel!
 }

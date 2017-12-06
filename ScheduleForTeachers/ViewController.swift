@@ -7,13 +7,14 @@
 //
 
 import UIKit
-//var asdasd = NSArray(
-var nameForGreetings = ""
-var probJson = [["Логин":"Kov","Пароль":"123456789","Уровень":1],["Логин":"Nosova","Пароль":"12345678","Уровень":0],["Логин":"Nosov","Пароль":"1234567890","Уровень":0]]
-var userTrig = false
-var adminTrig = false
-var passtrig = false
-var allutrig = false
+import SwiftyJSON
+import Alamofire
+
+var token = ""
+var nameOf = ""
+var jsonFromServer : [String:String] = [:]
+var triggerForAdminSegue = false
+var triggerForUserSegue = false
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginTextField: UITextField!
@@ -22,71 +23,86 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
- //       let jsonMaker = WorkWithJSON()
-//        let usersFromJson = jsonMaker.readJson(jsonName: "/Users/admin/Desktop/вход") as? NSArray
-//        asdasd = usersFromJson as? NSArray
+        removeAllElementsOfArrays()
+        
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func removeAllElementsOfArrays() {
+        arrayOfGroups.removeAll()
+        numberOfLesson.removeAll()
+        auditory.removeAll()
+        typeOfPairz.removeAll()
+        dayOfTheWeekz.removeAll()
+        nameOfPairz.removeAll()
+        arrayOfTeachers.removeAll()
     }
-    
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore. 
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true
     }
-    
+
     func findUser() {
-        userTrig = false
-        adminTrig = false
-        passtrig = false
-        allutrig = false
-        for i in 0..<probJson.count {
-                    if let dict = probJson[i] as? NSDictionary {
-                    if (dict["Логин"] as? String)! == loginTextField.text {
-                        allutrig = true
-                    if (dict["Пароль"] as? String)! == passwordTextField.text {
-                        passtrig = true
-                        nameForGreetings = loginTextField.text!
-                        if probJson[i]["Уровень"] as? Int == 1 {
-                            userTrig = true
-                            break
-                        }
-                        if probJson[i]["Уровень"] as? Int == 0 {
-                            adminTrig = true
-                            break
-                        }
-                    }
+
+        let a = self.loginTextField.text
+        let b = self.passwordTextField.text
+        let parameters = ["Логин": a, "Пароль": b]
+        
+        guard let url = URL(string: "https://65621f20.ngrok.io/login/") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+        request.httpBody = httpBody
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                print(response)
             }
-        }
-    }
-        if allutrig == false {
-            myAlert(titleText: "Error", messageText: "User not found")
-        }
-        if allutrig, passtrig == false {
-            myAlert(titleText: "Error", messageText: "Error password")
-        }
+            
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
+                    print(json)
+                    let when = DispatchTime.now() + 5
+                    DispatchQueue.main.asyncAfter(deadline: when) {
+                    nameOf = json["Имя"]!
+                    token = json["Токен"]!
+                    if json["Статус"]! == "Преподаватель" {
+                        self.performSegue(withIdentifier: "userSegue", sender: nil)
+                    }
+                    if json["Статус"]! == "Админ" {
+                        self.performSegue(withIdentifier: "adminSegue", sender: nil)
+                    }
+                        
+                    }
+
+                } catch {
+                    print(error)
+                }
+            }
+            
+            }.resume()
+
+        
+        
     }
 
     @IBAction func signIn(_ sender: UIButton) {
-        
-        NSLog((probJson[1]["Логин"] as? String)!)
+        removeAllElementsOfArrays()
+        triggerForUserSegue = false
+        triggerForAdminSegue = false
+
         if (loginTextField.text?.characters.count)! < 1 {
             myAlert(titleText: "Error", messageText: "Login must contain at least one character")
         }
-        if (passwordTextField.text?.characters.count)! < 8 {
+        if (passwordTextField.text?.characters.count)! < 2 {
             myAlert(titleText: "Error", messageText: "Password must contain at least 8 characters")
         }
         findUser()
-        if userTrig {
-            performSegue(withIdentifier: "userSegue", sender: nil)
-        }
-        if adminTrig {
-            performSegue(withIdentifier: "adminSegue", sender: nil)
-        }
+
         }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -99,9 +115,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func myAlert(titleText : String, messageText : String) {
         let alert = UIAlertController(title: titleText, message: messageText, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in alert.dismiss(animated: true, completion: nil)}))
         self.present(alert, animated: true, completion: nil)
     }
 
+    
+
+    @IBAction func removeAll(_ sender: Any) {
+        removeAllElementsOfArrays()
+        performSegue(withIdentifier: "guestSegue", sender: nil)
+    }
 }
 

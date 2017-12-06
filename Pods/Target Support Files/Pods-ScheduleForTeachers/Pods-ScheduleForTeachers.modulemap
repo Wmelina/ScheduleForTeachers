@@ -1,0 +1,6 @@
+framework module Pods_ScheduleForTeachers {
+  umbrella header "Pods-ScheduleForTeachers-umbrella.h"
+
+  export *
+  module * { export * }
+}

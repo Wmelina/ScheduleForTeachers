@@ -10,9 +10,11 @@ import UIKit
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var firstName: UITextField!
+    
     @IBOutlet weak var fullName: UITextField!
     
-    @IBOutlet weak var emailAdr: UITextField!
+    @IBOutlet weak var status: UITextField!
     
     @IBOutlet weak var password: UITextField!
     
@@ -20,20 +22,16 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var sendRequest: UIButton!
     
-    var msg = ViewController()
+    @IBOutlet var comment: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         
@@ -54,28 +52,70 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func sendRequest(_ sender: Any) {
+        var errorTrig = true
         if (fullName.text?.characters.count)! < 1 {
             myAlert(titleText: "Error", messageText: "Login must contain at least one character")
+            errorTrig = false
         }
-        if (emailAdr.text?.characters.count)! < 1 {
-            myAlert(titleText: "Error", messageText: "Email must contain at least one character")
+        if (status.text?.characters.count)! < 1 {
+            myAlert(titleText: "Error", messageText: "Status must contain at least one character")
+            errorTrig = false
         }
         if (password.text?.characters.count)! < 8 {
             myAlert(titleText: "Error", messageText: "Password must contain at least 8 characters")
+            errorTrig = false
         }
         if confPassword.text != password.text {
             myAlert(titleText: "Error", messageText: "Passwords must be the same")
+            errorTrig = false
         }
-        //also here
-    }
-    /*
-    // MARK: - Navigation
+        if (fullName.text?.characters.count)! < 1 {
+            myAlert(titleText: "Error", messageText: "Name must contain at least one character")
+            errorTrig = false
+        }
+        if (comment.text?.characters.count)! < 1 {
+            myAlert(titleText: "Error", messageText: "Comment must contain at least one character")
+            errorTrig = false
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if errorTrig {
+
+        let parameters = ["Логин":fullName.text!, "Пароль":password.text!, "Заявка":comment.text!,"Имя":fullName.text!, "Статус":status.text!]
+        
+        guard let url = URL(string: "https://65621f20.ngrok.io/accounts/unconfirmed/new/") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+        request.httpBody = httpBody
+        print(httpBody)
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:String]
+                    print(json!)
+                } catch {
+                    print(error)
+                }
+            }
+            
+            }.resume()
+            myAlert(titleText: "Success", messageText: "Request successfully sended")
+            
+            self.fullName.text = ""
+            self.status.text = ""
+            self.comment.text = ""
+            self.confPassword.text = ""
+            self.password.text = ""
+            self.firstName.text = ""
+            
+
+        }
     }
-    */
 
 }
