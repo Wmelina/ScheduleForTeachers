@@ -18,10 +18,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="218"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c01-1Y-OfK">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c01-1Y-OfK">
                         <rect key="frame" x="8" y="179" width="148" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Отклонить"/>
+                        <state key="normal">
+                            <attributedString key="attributedTitle">
+                                <fragment content="Отклонить">
+                                    <attributes>
+                                        <font key="NSFont" size="15" name="LucidaGrande"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </state>
                         <connections>
                             <action selector="decline:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GJ4-Tf-1IU"/>
                         </connections>
@@ -57,19 +65,28 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9WR-Rs-yaT">
                         <rect key="frame" x="8" y="124" width="304" height="59"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.83137254900000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apj-gH-MJh">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Apj-gH-MJh">
                         <rect key="frame" x="172" y="179" width="148" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Принять"/>
+                        <state key="normal">
+                            <attributedString key="attributedTitle">
+                                <fragment content="Принять">
+                                    <attributes>
+                                        <font key="NSFont" size="15" name="LucidaGrande"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </state>
                         <connections>
                             <action selector="accept:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z95-V1-Mr2"/>
                         </connections>
                     </button>
                 </subviews>
+                <color key="backgroundColor" red="0.93725490199999995" green="0.83137254900000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             </tableViewCellContentView>
             <connections>
                 <outlet property="commentInRequest" destination="9WR-Rs-yaT" id="Tn6-Kg-dDk"/>
@@ -78,7 +95,7 @@
                 <outlet property="nameInRequest" destination="PG3-pL-7mu" id="bxt-8A-F86"/>
                 <outlet property="statusInRequest" destination="HPg-6S-kEh" id="0qs-zl-o1G"/>
             </connections>
-            <point key="canvasLocation" x="25" y="81"/>
+            <point key="canvasLocation" x="23" y="85"/>
         </tableViewCell>
     </objects>
 </document>
