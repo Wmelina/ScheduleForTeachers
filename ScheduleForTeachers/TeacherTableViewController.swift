@@ -23,7 +23,7 @@ class TeacherTableViewController: UITableViewController {
     }
     
     func getTeachers() {
-        let url = "https://65621f20.ngrok.io/accounts/teachers/"
+        let url = "https://2c7218ff.ngrok.io/accounts/teachers/"
         let jsonUrl = NSURL(string:url)
         let jsonData = try? NSData(contentsOf: jsonUrl! as URL, options: NSData.ReadingOptions.uncached)
         let sdfsdf = JSON(data: jsonData! as Data)

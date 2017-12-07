@@ -89,9 +89,9 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
         if errorTrig {
 
-        let parameters = ["Логин":fullName.text!, "Пароль":password.text!, "Заявка":comment.text!,"Имя":fullName.text!, "Статус":statusStr]
+        let parameters = ["Логин":fullName.text!, "Пароль":password.text!, "Заявка":comment.text!,"Имя":firstName.text!, "Статус":statusStr]
         
-        guard let url = URL(string: "https://65621f20.ngrok.io/accounts/unconfirmed/new/") else { return }
+        guard let url = URL(string: "https://2c7218ff.ngrok.io/accounts/unconfirmed/new/") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

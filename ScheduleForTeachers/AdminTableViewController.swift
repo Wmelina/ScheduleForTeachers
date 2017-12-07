@@ -25,7 +25,7 @@ class AdminTableViewController: UITableViewController {
     }
     
     func getRequests() {
-        let url = "https://65621f20.ngrok.io/accounts/unconfirmed/?q={\"Токен\":\"\(token)\"}"
+        let url = "https://2c7218ff.ngrok.io/accounts/unconfirmed/?q={\"Токен\":\"\(token)\"}"
         let urlStr = url.addingPercentEscapes(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))! as NSString
         let jsonUrl = NSURL(string:urlStr as String)
         let jsonData = try? NSData(contentsOf: jsonUrl! as URL, options: NSData.ReadingOptions.uncached)

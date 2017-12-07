@@ -142,9 +142,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="al0-lF-AKT">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="odd"/>
+                                <segment title="even"/>
+                            </segments>
+                            <connections>
+                                <action selector="chooseWeek:" destination="Jds-tU-JG7" eventType="valueChanged" id="SLN-Tc-qJc"/>
+                            </connections>
+                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hsq-Uc-Yda">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="57" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hsq-Uc-Yda" id="KAK-Ts-F1y">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -157,6 +168,9 @@
                             <outlet property="delegate" destination="Jds-tU-JG7" id="VuM-ir-F2l"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="segmContr" destination="al0-lF-AKT" id="KwK-IW-INB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdt-9Z-Rez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -279,9 +293,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ES9-cy-ami">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="odd"/>
+                                <segment title="even"/>
+                            </segments>
+                            <connections>
+                                <action selector="segChanged:" destination="WJg-9J-Stc" eventType="valueChanged" id="z6f-Vg-exV"/>
+                            </connections>
+                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="si3-Sv-2iy">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="57" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="si3-Sv-2iy" id="Y1x-so-I7H">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -294,6 +319,9 @@
                             <outlet property="delegate" destination="WJg-9J-Stc" id="9fk-8K-Y5Z"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="segmContr" destination="ES9-cy-ami" id="PG0-wo-MEX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kc-p9-quD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

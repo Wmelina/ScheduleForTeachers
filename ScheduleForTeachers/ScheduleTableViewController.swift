@@ -14,25 +14,30 @@ import Alamofire
     var arrayOfTeachers:Array<Any> = []
     var timeLabel = ["08:00 - 09:30", "09:40 - 11:10", "11:20 - 12:50", "13:00 - 14:30", "14:40 - 16:10", "16:20 - 17:50", "18:00 - 19:30"]
     var dayOfTheWeek = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
+    var weekChooser = "odd"
 
 class ScheduleTableViewController: UITableViewController {
 
-//        
-//    func getTimetable() {
-//    
-//        let urlz = "https://65621f20.ngrok.io/lessons/?q={\"Имя\":\"\(arrayOfTeachers[segueInt] as! String)\"}"
-//        let urkzStr = urlz.addingPercentEscapes(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))! as NSString
-//        let jsonUrl = NSURL(string:urkzStr as String)
-//        let jsonData = try? NSData(contentsOf: jsonUrl! as URL, options: NSData.ReadingOptions.uncached)
-//        let sdfsdf = JSON(data: jsonData! as Data)
-//        print(sdfsdf)
-//    }
+    @IBOutlet var segmContr: UISegmentedControl!
+    var inde : Int! = 0
     
+    @IBAction func chooseWeek(_ sender: Any) {
+        switch segmContr.selectedSegmentIndex {
+        case 0:
+            inde = 0
+            tableView.reloadData()
+        case 1:
+            inde = 7
+            tableView.reloadData()
+        default:
+            break
+        }
+    }
 
     func getLessons() {
         
         
-        let urlz = "https://65621f20.ngrok.io/lessons/?q={\"Имя\":\"\(arrayOfTeachers[segueInt] as! String)\"}"
+        let urlz = "https://2c7218ff.ngrok.io/lessons/?q={\"Имя\":\"\(arrayOfTeachers[segueInt] as! String)\"}"
         print(urlz)
         let urkzStr = urlz.addingPercentEscapes(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))! as NSString
         let jsonUrl = NSURL(string:urkzStr as String)
@@ -84,7 +89,7 @@ class ScheduleTableViewController: UITableViewController {
         let sectionNumber : Int = indexPath.section
         let cell = Bundle.main.loadNibNamed("LessonTableViewCell", owner: self, options: nil)?.first as! LessonTableViewCell
         for i in 0..<arrayOfGroups.count {
-            if sectionNumber == dayOfTheWeekz[i] {
+            if sectionNumber + inde == dayOfTheWeekz[i] {
             if rowNumber == numberOfLesson[i] {
             cell.groupsNameLabel.text = arrayOfGroups[i]
             cell.nameLabel.text = nameOfPairz[i]

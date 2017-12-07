@@ -25,7 +25,7 @@ class TableViewCell: UITableViewCell {
     @IBAction func decline(_ sender: Any) {
         let parameters = ["Токен": token, "Вердикт": ["\(identifiersIn[didSelectedRowForChoose])" : "Отклонить"]] as [String : Any]
         
-        guard let url = URL(string: "https://65621f20.ngrok.io/accounts/uniconfirmed/confirm/") else { return }
+        guard let url = URL(string: "https://2c7218ff.ngrok.io/accounts/uniconfirmed/confirm/") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -60,7 +60,7 @@ class TableViewCell: UITableViewCell {
     @IBAction func accept(_ sender: Any) {
         let parameters = ["Токен": token, "Вердикт": ["\(identifiersIn[didSelectedRowForChoose])" : "Принять"]] as [String : Any]
         
-        guard let url = URL(string: "https://65621f20.ngrok.io/accounts/uniconfirmed/confirm/") else { return }
+        guard let url = URL(string: "https://2c7218ff.ngrok.io/accounts/uniconfirmed/confirm/") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

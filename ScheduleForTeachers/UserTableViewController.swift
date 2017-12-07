@@ -25,11 +25,23 @@ class UserTableViewController: UITableViewController {
         
 
     }
-
+    var inde : Int! = 0
+    @IBOutlet var segmContr: UISegmentedControl!
+    @IBAction func segChanged(_ sender: Any) {
+        switch segmContr.selectedSegmentIndex {
+        case 0:
+            inde = 0
+            tableView.reloadData()
+        case 1:
+            inde = 7
+            tableView.reloadData()
+        default:
+            break
+        }    }
     func getLessons() {
 
         
-        let urlz = "https://65621f20.ngrok.io/lessons/?q={\"Имя\":\"\(nameOf)\"}"
+        let urlz = "https://2c7218ff.ngrok.io/lessons/?q={\"Имя\":\"\(nameOf)\"}"
         print(urlz)
         let urkzStr = urlz.addingPercentEscapes(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))! as NSString
         let jsonUrl = NSURL(string:urkzStr as String)
@@ -74,7 +86,7 @@ class UserTableViewController: UITableViewController {
         let sectionNumber : Int = indexPath.section
         let cell = Bundle.main.loadNibNamed("LessonTableViewCell", owner: self, options: nil)?.first as! LessonTableViewCell
         for i in 0..<arrayOfGroups.count {
-            if sectionNumber == dayOfTheWeekz[i] {
+            if sectionNumber + inde == dayOfTheWeekz[i] {
                     if rowNumber == numberOfLesson[i] {
 
                         cell.groupsNameLabel.text = arrayOfGroups[i]

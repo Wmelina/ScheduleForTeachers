@@ -54,7 +54,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let b = self.passwordTextField.text
         let parameters = ["Логин": a, "Пароль": b]
         
-        guard let url = URL(string: "https://65621f20.ngrok.io/login/") else { return }
+        guard let url = URL(string: "https://2c7218ff.ngrok.io/login/") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

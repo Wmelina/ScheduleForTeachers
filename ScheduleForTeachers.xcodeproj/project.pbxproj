@@ -136,15 +136,15 @@
 				843531511F9F7A5C004A82C8 /* assist */,
 				842858D51F7C423E00A1CB23 /* Main.storyboard */,
 				842858D31F7C423E00A1CB23 /* ViewController.swift */,
-				84152BF51FA6241D003A10D2 /* LessonTableViewCell.swift */,
 				843531561F9FD2DB004A82C8 /* TeacherTableViewController.swift */,
 				84152BF11FA621D3003A10D2 /* ScheduleTableViewController.swift */,
 				843531541F9FD190004A82C8 /* RegistrationViewController.swift */,
 				844459741FD5F41900C532E0 /* UserTableViewController.swift */,
 				8444597A1FD8544300C532E0 /* AdminTableViewController.swift */,
+				84152BF51FA6241D003A10D2 /* LessonTableViewCell.swift */,
+				84152BF61FA6241D003A10D2 /* LessonTableViewCell.xib */,
 				844459761FD84E8900C532E0 /* TableViewCell.swift */,
 				844459771FD84E8900C532E0 /* TableViewCell.xib */,
-				84152BF61FA6241D003A10D2 /* LessonTableViewCell.xib */,
 				842858E01F7C423E00A1CB23 /* Info.plist */,
 			);
 			path = ScheduleForTeachers;
